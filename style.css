@@ -1,6 +1,7 @@
 html, body {
   margin: 0;
   padding: 0;
+  min-height: 100vh;
   font-family: 'Rubik', sans-serif;
   background-color: hsl(0, 0%, 92%);
   user-select: none;
@@ -14,7 +15,7 @@ html, body {
 }
 
 img {
-  width: 150px;
+  width: 300px;
   margin: 0 auto;
 }
 
@@ -32,7 +33,7 @@ input {
 
 button {
   color: #FDFDFD;
-  background-color: rgb(44, 44, 44);
+  background-color: rgb(107, 54, 4);
   border: 0;
   padding: 15px;
   border-radius: 8px;
@@ -43,7 +44,7 @@ button {
 
 button:hover{
 
-  background-color: red;
+  background-color: rgb(242, 76, 11);
 }
 
 ul {
@@ -62,4 +63,11 @@ ul li {
   flex-grow: 1;
   text-align: center;
   box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.2)
+}
+
+
+footer {
+  color: #e7500f;
+  margin-top: 450px;
+  text-align: center;
 }

@@ -12,27 +12,46 @@ const shoppingListInDB = ref(database, "products")
 const inputFieldEl = document.getElementById("input-field")
 const addButtonEl = document.getElementById("add-button")
 const shoppingListEl = document.getElementById("shopping-list")
-let trimmedInput = inputFieldEl.trim("input-field");
+
 
 
 addButtonEl.addEventListener("click", function() {
-    let inputValue = inputFieldEl.value
+  let inputValue = inputFieldEl.value.trim();
 
-    push(shoppingListInDB, inputValue)
+  
+  if (inputValue !== "") {
+      
+      push(shoppingListInDB, inputValue);
 
-    
-    inputFieldEl.value = ""
-    
-  })
+      inputFieldEl.value = "";
+  } else {
+     
+      alert("Please enter something before clicking the button.");
+  }
+});
 
-  if (trimmedInput === "") {
-    console.log("Input is blank.");
-}
- 
+inputFieldEl.addEventListener("keypress", function(event) {
+  
+  let inputValue = inputFieldEl.value.trim();
 
+  
+  if (event.key === "Enter") {
+   
+      event.preventDefault();
 
- 
-    
+      
+      if (inputValue !== "") {
+         
+          push(shoppingListInDB, inputValue);
+
+          
+          inputFieldEl.value = "";
+      } else {
+         
+          alert("Please enter something before pressing Enter.");
+      }
+  }
+});
 
   onValue(shoppingListInDB, function(snapshot){
     
